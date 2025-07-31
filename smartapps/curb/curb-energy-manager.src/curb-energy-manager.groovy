@@ -111,7 +111,7 @@ def sendNotifications() {
       if (c.toString() == "Total Power Usage") { continue }
       if (c.toString() == "Total Power Grid Impact") { continue }
       devlist.add([ pct: ((Float.parseFloat(c.currentState("power").value) / currentTotal) * 100).round(), name: c.toString() ])
-      count += count
+      count += 1
     } catch (e) {
       // sometimes we get circuits with no power value
       log.debug(e);
